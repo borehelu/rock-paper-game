@@ -61,8 +61,42 @@ img {
   width: 100vw;
   height: 100vh;
   background-color: var(--background-color);
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.score{
+  border: 3px solid var(--header-outline);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.score .logo{
+  width: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.score__details{
+  text-align: center;
+  background-color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+
+.score__details h1{
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--score-text);
+  text-transform: uppercase;
+}
+
+.score__details p{
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--dark-text);
 }
