@@ -19,11 +19,26 @@
   --white: #fff;
 
   /* gradient variables*/
-  --scissors-gradient: linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-  --paper-gradient: linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-  --rock-gradient: linear-gradient(to top,  hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-  --radial-gradient: repeating-radial-gradient(circle,hsl(214, 47%, 23%),hsl(237, 49%, 15%))
-
+  --scissors-gradient: linear-gradient(
+    to top,
+    hsl(39, 89%, 49%),
+    hsl(40, 84%, 53%)
+  );
+  --paper-gradient: linear-gradient(
+    to top,
+    hsl(230, 89%, 62%),
+    hsl(230, 89%, 65%)
+  );
+  --rock-gradient: linear-gradient(
+    to top,
+    hsl(349, 71%, 52%),
+    hsl(349, 70%, 56%)
+  );
+  --radial-gradient: repeating-radial-gradient(
+    circle,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
 }
 
 body {
@@ -46,7 +61,7 @@ img {
   justify-content: space-between;
 }
 
-.score{
+.score {
   border: 3px solid var(--header-outline);
   border-radius: 8px;
   padding: 1rem;
@@ -54,57 +69,55 @@ img {
   justify-content: space-between;
 }
 
-.score .logo{
+.score .logo {
   max-width: 44%;
   display: flex;
   align-items: center;
-  
 }
 
-.score__details{
+.score__details {
   text-align: center;
   background-color: var(--white);
   padding: 1rem 2rem;
   border-radius: 8px;
 }
 
-.score__details h1{
+.score__details h1 {
   font-weight: 600;
   font-size: 1.2rem;
   color: var(--score-text);
   text-transform: uppercase;
 }
 
-.score__details p{
+.score__details p {
   font-weight: 700;
   font-size: 3rem;
   color: var(--dark-text);
 }
 
-.board{
+.board {
   padding: 1rem;
   background-image: url("/public/images/bg-triangle.svg");
   background-repeat: no-repeat;
   background-position: center;
   min-height: 50%;
   position: relative;
-  
 }
 
-.selection{
+.selection {
   width: 160px;
   height: 160px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.winner{
-  box-shadow: 0 0 0 16px rgba(255, 255, 255, 0.03), 0 0 0 40px rgba(255, 255, 255, 0.02), 0 0 0 80px rgba(255, 255, 255, 0.01) !important;
+.winner {
+  box-shadow: 0 0 0 16px rgba(255, 255, 255, 0.03),
+    0 0 0 40px rgba(255, 255, 255, 0.02), 0 0 0 80px rgba(255, 255, 255, 0.01) !important;
 }
 
-.selection button{
+.selection button {
   border: none;
   cursor: pointer;
   background-color: var(--white);
@@ -117,61 +130,60 @@ img {
   box-shadow: inset 0 0 10px var(--dark-text);
 }
 
-.selection.scissors{
+.selection.scissors {
   background-image: var(--scissors-gradient);
 }
 
-.selection.rock{
+.selection.rock {
   background-image: var(--rock-gradient);
 }
 
-.selection.paper{
+.selection.paper {
   background-image: var(--paper-gradient);
 }
 
-.selection:first-of-type{
+.selection:first-of-type {
   position: absolute;
   left: 0;
   top: 0;
 }
-.selection:nth-last-of-type(2){
+.selection:nth-last-of-type(2) {
   position: absolute;
   right: 0;
   top: 0;
 }
-.selection:last-of-type{
+.selection:last-of-type {
   position: absolute;
   right: 30%;
   bottom: 16%;
 }
 
-
-.btn{
+.btn {
   cursor: pointer;
-  padding: 1rem 2rem .5rem;
+  padding: 1rem 2rem 0.5rem;
   background: none;
-  border:none;
+  border: none;
   border-radius: 8px;
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 3px;
   text-align: center;
-} 
+}
 
-.btn-rules{
+.btn-rules {
   border: 2px solid var(--header-outline);
   color: var(--white);
   align-self: center;
 }
 
-.selected__board{
+.selected__board {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.selected__board div{
+.selected__board div {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
@@ -181,7 +193,7 @@ img {
   letter-spacing: 2px;
 }
 
-.selected__board .selection{
+.selected__board .selection {
   all: unset;
   width: 160px;
   height: 160px;
@@ -191,54 +203,75 @@ img {
   align-items: center;
 }
 
-.selected__board .selection button{
+.selected__board .selection button {
   pointer-events: none;
 }
 
-.selected__board .selection.rock{
+.selected__board .selection.rock {
   background-image: var(--rock-gradient);
 }
 
-.selected__board .selection.paper{
+.selected__board .selection.paper {
   background-image: var(--paper-gradient);
 }
 
-.selected__board .selection.scissors{
+.selected__board .selection.scissors {
   background-image: var(--scissors-gradient);
 }
 
-.match__details{
+.match__details {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 1rem;
-
 }
 
-.match__details h1{
+.match__details h1 {
   text-transform: uppercase;
   font-size: 3rem;
 }
 
-.match__details .btn__playagain{
+.match__details .btn__playagain {
   background-color: var(--white);
   color: var(--dark-text);
-
 }
 
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  display: none;
+}
+
+.modal.show{
+  display: flex;
+}
+
+.modal h1{
+  color: var(--dark-text);
+  text-transform: uppercase;
+}
+
+
 @media screen and (max-width: 375px) {
-  .selection{
+  .selection {
     width: 140px;
     height: 140px;
   }
 
-  .selection button{
+  .selection button {
     width: 108px;
     height: 108px;
   }
 
-  .selection:last-of-type{
+  .selection:last-of-type {
     bottom: 11%;
   }
-  
 }
