@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Option from "./Option";
 import Selection from "./Selection";
 
 function GameBoard() {
@@ -36,9 +37,9 @@ function GameBoard() {
   if (!isSelected) {
     return (
       <div className="board">
-        <Selection selectionType="paper" setSelected={setSelected} />
-        <Selection selectionType="scissors" setSelected={setSelected} />
-        <Selection selectionType="rock" setSelected={setSelected} />
+        <Option selectionType="paper" setSelected={setSelected} />
+        <Option selectionType="scissors" setSelected={setSelected} />
+        <Option selectionType="rock" setSelected={setSelected} />
       </div>
     );
   } else {

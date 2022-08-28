@@ -1,7 +1,7 @@
 import React from "react";
 
-function Selection({ selectionType, setSelected, winner }) {
-  console.log(setSelected);
+function Selection({ selectionType, winner }) {
+  
 
   let icon;
 
@@ -40,20 +40,11 @@ function Selection({ selectionType, setSelected, winner }) {
       break;
   }
 
-  function handleClick() {
-    console.log(selectionType);
-    setSelected(selectionType);
-  }
+
 
   return (
     <div className={`selection ${selectionType} ${selectionType === winner ? "winner" : ""}`}>
-      {
-       setSelected === undefined ?
         <button>{icon}</button>
-       : 
-        <button onClick={(e) => handleClick(selectionType)}>{icon}</button>
-      
-      }
     </div>
   );
 }

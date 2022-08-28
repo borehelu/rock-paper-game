@@ -46,7 +46,7 @@ function Option({ selectionType, setSelected, winner }) {
   }
 
   return (
-    <div className={`selection ${selectionType} ${selectionType === winner ? "winner" : ""}`}>
+    <div className={`selection ${selectionType} `}>
       {
        setSelected === undefined ?
         <button>{icon}</button>
