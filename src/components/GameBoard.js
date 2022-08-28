@@ -1,37 +1,27 @@
 import React, { useEffect, useState } from "react";
 import Option from "./Option";
-import Selection from "./Selection";
+import Outcome from "./Outcome";
+import {gameSelect} from '../utils/Game';
 
 function GameBoard() {
   const [isSelected, setIsSelected] = useState(false);
   const [selected, setSelected] = useState();
-  const [gameSelected, setGameSeleted] = useState("rock");
+  const [gameSelected, setGameSelected] = useState();
 
-  let outcome = "win";
+  let homeSelection = gameSelect();
 
   useEffect(() => {
     if (selected) {
       setIsSelected((prev) => !prev);
+      setGameSelected(homeSelection);
     }
   }, [selected]);
 
 
-  function gameSelect(){
-    let gameSelected = Math.floor(Math.random()*3) + 1;
-
-    switch (gameSelected) {
-      case 1:
-        setGameSeleted("rock");
-        break;
-      case 2:
-        setGameSeleted("paper");
-        break; 
-      case 3:
-        setGameSeleted("scissor");
-        break;   
-      default:
-        break;
-    }
+  function resetGame(){
+    setIsSelected(prev => !prev);
+    setSelected("");
+    setGameSelected("");
   }
   
   if (!isSelected) {
@@ -42,24 +32,9 @@ function GameBoard() {
         <Option selectionType="rock" setSelected={setSelected} />
       </div>
     );
-  } else {
+  } else if(selected && gameSelected && isSelected){
     return (
-      <>
-      <div className="selected__board">
-        <div>
-          <Selection selectionType={selected} winner="rock"/>
-          <p>you picked</p>
-        </div>
-        <div>
-          <Selection selectionType={gameSelected} winner="rock"/>
-          <p>the house picked</p>
-        </div>
-      </div>
-      <div className="match__details">
-        <h1>you {outcome}</h1>
-        <button className="btn btn__playagain" onClick={()=>setIsSelected(prev => !prev)}>play again</button>
-      </div>
-      </>
+      <Outcome selected={selected} gameSelected = {gameSelected} resetGame={resetGame} />
     );
   }
 }
