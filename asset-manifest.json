@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/rock-paper-game/static/css/main.b0767d6d.css",
-    "main.js": "/rock-paper-game/static/js/main.7b34d1b4.js",
+    "main.css": "/rock-paper-game/static/css/main.12eb10b8.css",
+    "main.js": "/rock-paper-game/static/js/main.b1995807.js",
     "index.html": "/rock-paper-game/index.html",
     "static/media/bg-triangle.svg": "/rock-paper-game/static/media/bg-triangle.77c6ca418d3751d8f717.svg",
-    "main.b0767d6d.css.map": "/rock-paper-game/static/css/main.b0767d6d.css.map",
-    "main.7b34d1b4.js.map": "/rock-paper-game/static/js/main.7b34d1b4.js.map"
+    "main.12eb10b8.css.map": "/rock-paper-game/static/css/main.12eb10b8.css.map",
+    "main.b1995807.js.map": "/rock-paper-game/static/js/main.b1995807.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0767d6d.css",
-    "static/js/main.7b34d1b4.js"
+    "static/css/main.12eb10b8.css",
+    "static/js/main.b1995807.js"
   ]
 }
