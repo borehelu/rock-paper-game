@@ -44,6 +44,7 @@
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
   color: var(--white);
+  background-color: var(--background-color);
 }
 
 img {
@@ -54,7 +55,6 @@ img {
 .container {
   width: 100vw;
   height: 100vh;
-  background-color: var(--background-color);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -274,4 +274,68 @@ img {
   .selection:last-of-type {
     bottom: 11%;
   }
+}
+
+@media  screen and (min-width: 560px) {
+  .container{
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .selection{
+    width: 180px;
+    height: 180px;
+  }
+
+  .selection button{
+    width: 142px;
+    height: 142px;
+  }
+
+  .selection:first-of-type {
+    left: 10px;
+    top: 10px;
+  }
+  .selection:nth-last-of-type(2) {
+    right: 10px;
+    top: 10px;
+  }
+
+  .selected__board .selection {
+    width: 180px;
+    height: 180px;
+  }
+
+  .winner {
+    box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.03),
+      0 0 0 60px rgba(255, 255, 255, 0.02), 0 0 0 100px rgba(255, 255, 255, 0.01) !important;
+  }
+
+  .btn-rules {
+    align-self: flex-end;
+  }
+
+  .selected__board div {
+    flex-direction: column-reverse;
+  }
+
+  .modal{
+    padding: 1rem;
+    width: clamp(300px,50%, 400px);
+    height: auto;
+    top: 25%;
+    left: 30%;
+    row-gap: 1rem;
+  }
+
+  .modal h1{
+    align-self: flex-start;
+  }
+
+  .modal button{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+  
 }
