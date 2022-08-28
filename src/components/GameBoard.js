@@ -3,7 +3,7 @@ import Option from "./Option";
 import Outcome from "./Outcome";
 import {gameSelect} from '../utils/Game';
 
-function GameBoard() {
+function GameBoard({setWinner}) {
   const [isSelected, setIsSelected] = useState(false);
   const [selected, setSelected] = useState();
   const [gameSelected, setGameSelected] = useState();
@@ -34,7 +34,7 @@ function GameBoard() {
     );
   } else if(selected && gameSelected && isSelected){
     return (
-      <Outcome selected={selected} gameSelected = {gameSelected} resetGame={resetGame} />
+      <Outcome selected={selected} gameSelected = {gameSelected} resetGame={resetGame} setWinner={setWinner}  />
     );
   }
 }

@@ -1,20 +1,26 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import Selection from "./Selection";
 import { getWinner } from "../utils/Game";
 
-function Outcome({selected, gameSelected, resetGame}) {
-  let winner = getWinner(selected, gameSelected);
-  let outcome;
+function Outcome({selected, gameSelected, resetGame, setWinner}) {
+ let winner = getWinner(selected,gameSelected);
+ let outcome;
+
+ setWinner(winner);
 
   if (winner === "tie") {
     outcome = "draw";
   } else if (winner === "user") {
     outcome = "you win";
+    
   } else {
     outcome = "you lose";
+    
   }
 
-  console.log(selected,gameSelected,winner);
+  
+  
+  
   return (
     <>
       <div className="selected__board">

@@ -2,7 +2,6 @@ import React from "react";
 
 function Selection({ selectionType, winner }) {
   
-console.log(selectionType,winner)
   let icon;
 
   switch (selectionType) {

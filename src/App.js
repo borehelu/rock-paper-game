@@ -1,30 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Score from "./components/Score";
 import GameBoard from "./components/GameBoard";
 import Rules from "./components/Rules";
 
 function App() {
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(1);
+  const [winner, setWinner] = useState();
 
-  function increaseScore(){
-    setScore(prevScore => prevScore + 1);
-
-  }
-
-  function decreaseScore(){
-    setScore(prevScore => {
-      if(prevScore !== 0){
-        return prevScore -1;
-      }else{
-        return 0;
+  useEffect(() => {
+    if(winner){
+      if(winner === "user"){
+        setScore(score => score + 1);
+      } else if( winner === "house"){
+        setScore(score => {
+          if(score > 0){
+            return score - 1;
+          }else{
+            return 0;
+          }
+        })
       }
-    });
-  }
+
+    }
+  
+   
+  }, [winner])
+  
+
 
   return (
     <div className="container">
       <Score score={score}/>
-      <GameBoard />
+      <GameBoard setWinner={setWinner}  />
       <Rules />
     </div>
   );
