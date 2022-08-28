@@ -19,32 +19,11 @@
   --white: #fff;
 
   /* gradient variables*/
+  --scissors-gradient: linear-gradient(to top, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  --paper-gradient: linear-gradient(to top, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  --rock-gradient: linear-gradient(to top,  hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  --radial-gradient: repeating-radial-gradient(circle,hsl(214, 47%, 23%),hsl(237, 49%, 15%))
 
-  /* 
-  
-  
-## Colors
-
-### Primary
-
-- Scissors Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%)
-- Paper Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%)
-- Rock Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%)
-- Lizard Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
-- Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%)
-
-
-
-
-
-### Background
-
-- Radial Gradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%)
-
-
-  
-  
-  */
 }
 
 body {
@@ -76,9 +55,10 @@ img {
 }
 
 .score .logo{
-  width: 150px;
+  max-width: 44%;
   display: flex;
   align-items: center;
+  
 }
 
 .score__details{
@@ -99,4 +79,166 @@ img {
   font-weight: 700;
   font-size: 3rem;
   color: var(--dark-text);
+}
+
+.board{
+  padding: 1rem;
+  background-image: url("/public/images/bg-triangle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 50%;
+  position: relative;
+  
+}
+
+.selection{
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.winner{
+  box-shadow: 0 0 0 16px rgba(255, 255, 255, 0.03), 0 0 0 40px rgba(255, 255, 255, 0.02), 0 0 0 80px rgba(255, 255, 255, 0.01) !important;
+}
+
+.selection button{
+  border: none;
+  cursor: pointer;
+  background-color: var(--white);
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 10px var(--dark-text);
+}
+
+.selection.scissors{
+  background-image: var(--scissors-gradient);
+}
+
+.selection.rock{
+  background-image: var(--rock-gradient);
+}
+
+.selection.paper{
+  background-image: var(--paper-gradient);
+}
+
+.selection:first-of-type{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.selection:nth-last-of-type(2){
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.selection:last-of-type{
+  position: absolute;
+  right: 30%;
+  bottom: 16%;
+}
+
+
+.btn{
+  cursor: pointer;
+  padding: 1rem 2rem .5rem;
+  background: none;
+  border:none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-align: center;
+} 
+
+.btn-rules{
+  border: 2px solid var(--header-outline);
+  color: var(--white);
+  align-self: center;
+}
+
+.selected__board{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selected__board div{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.selected__board .selection{
+  all: unset;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected__board .selection button{
+  pointer-events: none;
+}
+
+.selected__board .selection.rock{
+  background-image: var(--rock-gradient);
+}
+
+.selected__board .selection.paper{
+  background-image: var(--paper-gradient);
+}
+
+.selected__board .selection.scissors{
+  background-image: var(--scissors-gradient);
+}
+
+.match__details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+
+}
+
+.match__details h1{
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.match__details .btn__playagain{
+  background-color: var(--white);
+  color: var(--dark-text);
+
+}
+
+@media screen and (max-width: 375px) {
+  .selection{
+    width: 140px;
+    height: 140px;
+  }
+
+  .selection button{
+    width: 108px;
+    height: 108px;
+  }
+
+  .selection:last-of-type{
+    bottom: 11%;
+  }
+  
 }
