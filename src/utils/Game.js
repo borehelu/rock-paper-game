@@ -17,7 +17,7 @@ export function getWinner(selected,gameSelected){
           return 'user';
         }
 
-      case "scissor":
+      case "scissors":
         if(gameSelected === "rock"){
           return 'house';
         }else{
