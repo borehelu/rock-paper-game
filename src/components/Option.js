@@ -1,8 +1,7 @@
 import React from "react";
 
-function Option({ selectionType, setSelected, winner }) {
-  console.log(setSelected);
-
+function Option({ selectionType, setSelected }) {
+  
   let icon;
 
   switch (selectionType) {
@@ -41,7 +40,6 @@ function Option({ selectionType, setSelected, winner }) {
   }
 
   function handleClick() {
-    console.log(selectionType);
     setSelected(selectionType);
   }
 

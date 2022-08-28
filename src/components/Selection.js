@@ -2,7 +2,7 @@ import React from "react";
 
 function Selection({ selectionType, winner }) {
   
-
+console.log(selectionType,winner)
   let icon;
 
   switch (selectionType) {
@@ -43,7 +43,7 @@ function Selection({ selectionType, winner }) {
 
 
   return (
-    <div className={`selection ${selectionType} ${selectionType === winner ? "winner" : ""}`}>
+    <div className={`selection ${selectionType} ${winner ? "winner": ""}`}>
         <button>{icon}</button>
     </div>
   );
