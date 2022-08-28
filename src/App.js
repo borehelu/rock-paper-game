@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Score from "./components/Score";
 import GameBoard from "./components/GameBoard";
+import Rules from "./components/Rules";
 
 function App() {
   const [score, setScore] = useState(0);
@@ -24,7 +25,7 @@ function App() {
     <div className="container">
       <Score score={score}/>
       <GameBoard />
-      <button className="btn btn-rules">rules</button>
+      <Rules />
     </div>
   );
 }
