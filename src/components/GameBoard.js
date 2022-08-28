@@ -14,6 +14,25 @@ function GameBoard() {
     }
   }, [selected]);
 
+
+  function gameSelect(){
+    let gameSelected = Math.floor(Math.random()*3) + 1;
+
+    switch (gameSelected) {
+      case 1:
+        setGameSeleted("rock");
+        break;
+      case 2:
+        setGameSeleted("paper");
+        break; 
+      case 3:
+        setGameSeleted("scissor");
+        break;   
+      default:
+        break;
+    }
+  }
+  
   if (!isSelected) {
     return (
       <div className="board">
