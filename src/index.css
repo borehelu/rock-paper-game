@@ -274,6 +274,11 @@ img {
   .selection:last-of-type {
     bottom: 11%;
   }
+
+  .selected__board .selection {
+    width: 140px;
+    height: 140px;
+  }
 }
 
 @media  screen and (min-width: 560px) {
