@@ -240,14 +240,22 @@ img {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modalBody{
+  padding: 1rem 2rem;
   background-color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  display: none;
+  position: relative;
 }
 
 .modal.show{
@@ -324,12 +332,9 @@ img {
     flex-direction: column-reverse;
   }
 
-  .modal{
-    padding: 1rem;
+
+  .modalBody{
     width: clamp(300px,50%, 400px);
-    height: auto;
-    top: 25%;
-    left: 30%;
     row-gap: 1rem;
   }
 
